@@ -1,0 +1,5 @@
+Coisas que eu descobri nessa game jam.
+Eu deveria padronizar os tamanhos dos personagens com o cenário.
+Criar as imagens com margens, para a substituição no DragonBones.
+Dá pra deixar as coisas transparentes no DragonBones.
+Lembrar de ativar o Stretch Mode.

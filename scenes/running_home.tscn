@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/mom/mom_ske.json" type="GDDragonBonesResource" id=1]
+[ext_resource path="res://assets/mom/mom_tex.png" type="Texture" id=2]
+[ext_resource path="res://scripts/running_home.gd" type="Script" id=3]
+[ext_resource path="res://assets/laundry/background.PNG" type="Texture" id=4]
+[ext_resource path="res://assets/laundry/floor.PNG" type="Texture" id=5]
+[ext_resource path="res://assets/hydrant/hydrant.PNG" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Bangers-Regular.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 776.456, 17.6531 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 55.9615
+height = 228.52
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 32.022
+height = 98.3754
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 38.1581, 302.352 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+outline_size = 2
+outline_color = Color( 1, 1, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="running_home" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 654.003, 646.738 )
+texture = ExtResource( 4 )
+
+[node name="floor1" type="Sprite" parent="."]
+position = Vector2( 158.37, 836.043 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="floor2" type="Sprite" parent="."]
+position = Vector2( 634.62, 836.043 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="floor3" type="Sprite" parent="."]
+position = Vector2( 1113.92, 836.043 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="floor4" type="Sprite" parent="."]
+position = Vector2( 1591.44, 836.043 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="floor5" type="Sprite" parent="."]
+position = Vector2( 2072.28, 836.043 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 721.37, 842.945 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 387.667, 655.246 )
+
+[node name="armature" type="GDDragonBones" parent="player"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+resource = ExtResource( 1 )
+playback/play = true
+playback/curr_animation = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2( 16.9271, 0 )
+shape = SubResource( 2 )
+
+[node name="hydrant" type="Area2D" parent="."]
+position = Vector2( 1584.15, 755.393 )
+
+[node name="hydrant" type="Sprite" parent="hydrant"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hydrant"]
+shape = SubResource( 3 )
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2( 34.8557, 576.744 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+shape = SubResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1294.79
+margin_top = 37.3755
+margin_right = 1397.79
+margin_bottom = 89.3755
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "0 of 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="hydrant" to="." method="_on_hydrant_body_entered"]

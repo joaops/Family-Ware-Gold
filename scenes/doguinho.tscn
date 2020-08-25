@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/doguinho/doguinho_ske.json" type="GDDragonBonesResource" id=1]
+[ext_resource path="res://assets/doguinho/doguinho_tex.png" type="Texture" id=2]
+[ext_resource path="res://scripts/doginho.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 94.1182
+height = 130.638
+
+[node name="doguinho" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="armature" type="GDDragonBones" parent="."]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+resource = ExtResource( 1 )
+playback/play = true
+playback/curr_animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="area_entered" from="." to="." method="_on_doginho_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_doginho_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_doginho_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

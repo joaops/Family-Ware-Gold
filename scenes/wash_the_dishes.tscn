@@ -1,0 +1,572 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://assets/fonts/Bangers-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/dish/dirt/dirt_3.PNG" type="Texture" id=2]
+[ext_resource path="res://assets/sounds_effects/wash_dishes.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/dish/dirt/dirt_8.PNG" type="Texture" id=4]
+[ext_resource path="res://assets/dish/dirt/dirt_7.PNG" type="Texture" id=5]
+[ext_resource path="res://assets/dish/dirt/dirt_5.PNG" type="Texture" id=6]
+[ext_resource path="res://assets/dish/dirt/dirt_10.PNG" type="Texture" id=7]
+[ext_resource path="res://assets/dish/dirt/dirt_4.PNG" type="Texture" id=8]
+[ext_resource path="res://assets/kitchen/background.PNG" type="Texture" id=9]
+[ext_resource path="res://scripts/WashTheDishes.gd" type="Script" id=10]
+[ext_resource path="res://assets/dish/dirt/dirt_1.PNG" type="Texture" id=11]
+[ext_resource path="res://assets/dish/dirt/dirt_6.PNG" type="Texture" id=12]
+[ext_resource path="res://assets/sounds_effects/wash.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/dish/dish.PNG" type="Texture" id=14]
+[ext_resource path="res://assets/dish/dirt/dirt_2.PNG" type="Texture" id=15]
+[ext_resource path="res://assets/dish/dirt/dirt_9.PNG" type="Texture" id=16]
+[ext_resource path="res://assets/kitchen_sink/kitchen_sink.PNG" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 2
+outline_color = Color( 1, 1, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 43.3177
+height = 89.3107
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 33.0758
+height = 66.8123
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 20.0906
+height = 31.278
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 59.2993
+height = 61.9862
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 38.1042
+height = 96.1819
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 28.6137
+height = 61.4104
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 32.4709
+height = 112.736
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 37.4575
+height = 56.7779
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 52.2009
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 61.2073
+height = 31.422
+
+[node name="wash_the_dishes" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 934.387, 432.262 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 356.375
+margin_top = 123.846
+margin_right = 1124.38
+margin_bottom = 200.846
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "use the mouse to wash the dishes"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonStart" type="Button" parent="."]
+margin_left = 660.33
+margin_top = 249.335
+margin_right = 817.33
+margin_bottom = 313.335
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kitchen_sink" type="Sprite" parent="."]
+position = Vector2( 723.468, 861.507 )
+texture = ExtResource( 17 )
+
+[node name="dish_1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 690.085, 448.621 )
+scale = Vector2( 0.740718, 0.740718 )
+texture = ExtResource( 14 )
+
+[node name="dirt_1" type="Sprite" parent="dish_1"]
+position = Vector2( -6.10352e-05, -38.0546 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_1/Area2D_dish_dirt"]
+rotation = 1.01927
+shape = SubResource( 3 )
+
+[node name="dirt_2" type="Sprite" parent="dish_1"]
+position = Vector2( -248.631, -174.615 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_2/Area2D_dish_dirt"]
+rotation = 1.39801
+shape = SubResource( 4 )
+
+[node name="dirt_3" type="Sprite" parent="dish_1"]
+position = Vector2( 153.235, -309.504 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_3/Area2D_dish_dirt"]
+rotation = 0.925871
+shape = SubResource( 5 )
+
+[node name="dirt_4" type="Sprite" parent="dish_1"]
+position = Vector2( 332.371, 84.0003 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_4/Area2D_dish_dirt"]
+position = Vector2( -3.79529, -8.33612 )
+rotation = 0.755728
+shape = SubResource( 6 )
+
+[node name="dirt_5" type="Sprite" parent="dish_1"]
+position = Vector2( 193.122, 292.879 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_5/Area2D_dish_dirt"]
+position = Vector2( -2.52112, -4.51318 )
+rotation = 1.26536
+shape = SubResource( 7 )
+
+[node name="dirt_6" type="Sprite" parent="dish_1"]
+position = Vector2( -31.8361, -232.354 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_6/Area2D_dish_dirt"]
+rotation = -0.314219
+shape = SubResource( 8 )
+
+[node name="dirt_7" type="Sprite" parent="dish_1"]
+position = Vector2( -178.431, 275.45 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_7/Area2D_dish_dirt"]
+position = Vector2( -2.52112, -4.51318 )
+rotation = -0.577737
+shape = SubResource( 9 )
+
+[node name="dirt_8" type="Sprite" parent="dish_1"]
+position = Vector2( -212.831, 44.5086 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_8/Area2D_dish_dirt"]
+rotation = 0.513477
+shape = SubResource( 10 )
+
+[node name="dirt_9" type="Sprite" parent="dish_1"]
+position = Vector2( 39.2811, 126.266 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_9/Area2D_dish_dirt"]
+shape = SubResource( 11 )
+
+[node name="dirt_10" type="Sprite" parent="dish_1"]
+position = Vector2( 256.894, -152.479 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_1/dirt_10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_1/dirt_10/Area2D_dish_dirt"]
+rotation = 0.958239
+shape = SubResource( 12 )
+
+[node name="dish_2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 690.085, 448.621 )
+scale = Vector2( 0.740718, 0.740718 )
+texture = ExtResource( 14 )
+
+[node name="dirt_1" type="Sprite" parent="dish_2"]
+position = Vector2( -6.10352e-05, -38.0546 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_1/Area2D_dish_dirt"]
+rotation = 1.01927
+shape = SubResource( 3 )
+
+[node name="dirt_2" type="Sprite" parent="dish_2"]
+position = Vector2( -248.631, -174.615 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_2/Area2D_dish_dirt"]
+rotation = 1.39801
+shape = SubResource( 4 )
+
+[node name="dirt_3" type="Sprite" parent="dish_2"]
+position = Vector2( 153.235, -309.504 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_3/Area2D_dish_dirt"]
+rotation = 0.925871
+shape = SubResource( 5 )
+
+[node name="dirt_4" type="Sprite" parent="dish_2"]
+position = Vector2( 332.371, 84.0003 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_4/Area2D_dish_dirt"]
+position = Vector2( -3.79529, -8.33612 )
+rotation = 0.755728
+shape = SubResource( 6 )
+
+[node name="dirt_5" type="Sprite" parent="dish_2"]
+position = Vector2( 193.122, 292.879 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_5/Area2D_dish_dirt"]
+position = Vector2( -2.52112, -4.51318 )
+rotation = 1.26536
+shape = SubResource( 7 )
+
+[node name="dirt_6" type="Sprite" parent="dish_2"]
+position = Vector2( -31.8361, -232.354 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_6/Area2D_dish_dirt"]
+rotation = -0.314219
+shape = SubResource( 8 )
+
+[node name="dirt_7" type="Sprite" parent="dish_2"]
+position = Vector2( -178.431, 275.45 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_7/Area2D_dish_dirt"]
+position = Vector2( -2.52112, -4.51318 )
+rotation = -0.577737
+shape = SubResource( 9 )
+
+[node name="dirt_8" type="Sprite" parent="dish_2"]
+position = Vector2( -212.831, 44.5086 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_8/Area2D_dish_dirt"]
+rotation = 0.513477
+shape = SubResource( 10 )
+
+[node name="dirt_9" type="Sprite" parent="dish_2"]
+position = Vector2( 39.2811, 126.266 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_9/Area2D_dish_dirt"]
+shape = SubResource( 11 )
+
+[node name="dirt_10" type="Sprite" parent="dish_2"]
+position = Vector2( 256.894, -152.479 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_2/dirt_10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_2/dirt_10/Area2D_dish_dirt"]
+rotation = 0.958239
+shape = SubResource( 12 )
+
+[node name="dish_3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 690.085, 448.621 )
+scale = Vector2( 0.740718, 0.740718 )
+texture = ExtResource( 14 )
+
+[node name="dirt_1" type="Sprite" parent="dish_3"]
+position = Vector2( -6.10352e-05, -38.0546 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_1/Area2D_dish_dirt"]
+rotation = 1.01927
+shape = SubResource( 3 )
+
+[node name="dirt_2" type="Sprite" parent="dish_3"]
+position = Vector2( -248.631, -174.615 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_2/Area2D_dish_dirt"]
+rotation = 1.39801
+shape = SubResource( 4 )
+
+[node name="dirt_3" type="Sprite" parent="dish_3"]
+position = Vector2( 153.235, -309.504 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_3/Area2D_dish_dirt"]
+rotation = 0.925871
+shape = SubResource( 5 )
+
+[node name="dirt_4" type="Sprite" parent="dish_3"]
+position = Vector2( 332.371, 84.0003 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_4/Area2D_dish_dirt"]
+position = Vector2( -3.79529, -8.33612 )
+rotation = 0.755728
+shape = SubResource( 6 )
+
+[node name="dirt_5" type="Sprite" parent="dish_3"]
+position = Vector2( 193.122, 292.879 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_5/Area2D_dish_dirt"]
+position = Vector2( -2.52112, -4.51318 )
+rotation = 1.26536
+shape = SubResource( 7 )
+
+[node name="dirt_6" type="Sprite" parent="dish_3"]
+position = Vector2( -31.8361, -232.354 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_6/Area2D_dish_dirt"]
+rotation = -0.314219
+shape = SubResource( 8 )
+
+[node name="dirt_7" type="Sprite" parent="dish_3"]
+position = Vector2( -178.431, 275.45 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_7/Area2D_dish_dirt"]
+position = Vector2( -2.52112, -4.51318 )
+rotation = -0.577737
+shape = SubResource( 9 )
+
+[node name="dirt_8" type="Sprite" parent="dish_3"]
+position = Vector2( -212.831, 44.5086 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_8/Area2D_dish_dirt"]
+rotation = 0.513477
+shape = SubResource( 10 )
+
+[node name="dirt_9" type="Sprite" parent="dish_3"]
+position = Vector2( 39.2811, 126.266 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_9/Area2D_dish_dirt"]
+shape = SubResource( 11 )
+
+[node name="dirt_10" type="Sprite" parent="dish_3"]
+position = Vector2( 256.894, -152.479 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_dish_dirt" type="Area2D" parent="dish_3/dirt_10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dish_3/dirt_10/Area2D_dish_dirt"]
+rotation = 0.958239
+shape = SubResource( 12 )
+
+[node name="WashDishesAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="WashAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+margin_left = 97.0
+margin_top = 28.0
+margin_right = 1341.0
+margin_bottom = 77.0
+max_value = 10.0
+step = 1.0
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ButtonStart" to="." method="_on_ButtonStart_pressed"]
+[connection signal="mouse_entered" from="dish_1/dirt_1/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_1" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_2/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_2" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_3/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_3" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_4/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_4" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_5/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_5" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_6/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_6" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_7/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_7" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_8/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_8" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_9/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_9" ]]
+[connection signal="mouse_entered" from="dish_1/dirt_10/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_1", "dirt_10" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_1/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_1" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_2/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_2" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_3/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_3" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_4/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_4" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_5/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_5" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_6/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_6" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_7/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_7" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_8/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_8" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_9/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_9" ]]
+[connection signal="mouse_entered" from="dish_2/dirt_10/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_2", "dirt_10" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_1/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_1" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_2/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_2" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_3/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_3" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_4/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_4" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_5/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_5" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_6/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_6" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_7/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_7" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_8/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_8" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_9/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_9" ]]
+[connection signal="mouse_entered" from="dish_3/dirt_10/Area2D_dish_dirt" to="." method="_on_Area2D_dish_dirt_mouse_entered" binds= [ "dish_3", "dirt_10" ]]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

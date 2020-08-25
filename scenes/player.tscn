@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/boy/boy_ske.json" type="GDDragonBonesResource" id=1]
+[ext_resource path="res://assets/mom/mom_tex.png" type="Texture" id=2]
+[ext_resource path="res://assets/boy/boy_tex.png" type="Texture" id=3]
+[ext_resource path="res://assets/dad/dad_tex.png" type="Texture" id=4]
+[ext_resource path="res://assets/girl/girl_tex.png" type="Texture" id=5]
+[ext_resource path="res://assets/dad/dad_ske.json" type="GDDragonBonesResource" id=6]
+[ext_resource path="res://assets/mom/mom_ske.json" type="GDDragonBonesResource" id=7]
+[ext_resource path="res://assets/girl/girl_ske.json" type="GDDragonBonesResource" id=8]
+[ext_resource path="res://scripts/player.gd" type="Script" id=9]
+[ext_resource path="res://assets/fonts/Bangers-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 110.933
+height = 441.951
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 111.215
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+outline_size = 2
+outline_color = Color( 1, 1, 0, 1 )
+font_data = ExtResource( 10 )
+
+[node name="player" type="KinematicBody2D"]
+script = ExtResource( 9 )
+
+[node name="boy" type="GDDragonBones" parent="."]
+position = Vector2( 0, 176.003 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+resource = ExtResource( 1 )
+playback/play = true
+playback/curr_animation = "idle"
+
+[node name="girl" type="GDDragonBones" parent="."]
+visible = false
+position = Vector2( 0, 174.813 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+resource = ExtResource( 8 )
+playback/play = true
+playback/curr_animation = "idle"
+
+[node name="dad" type="GDDragonBones" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+resource = ExtResource( 6 )
+playback/play = true
+playback/curr_animation = "idle"
+
+[node name="mom" type="GDDragonBones" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+resource = ExtResource( 7 )
+playback/play = true
+playback/curr_animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 28.6055, 14.8325 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 30.4118, 95.3313 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -276.589
+margin_top = -101.042
+margin_right = 278.411
+margin_bottom = -49.0419
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Press 'E' To Change The Character"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPet" type="Label" parent="."]
+visible = false
+margin_left = -196.278
+margin_top = -160.319
+margin_right = 196.722
+margin_bottom = -108.319
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Press 'F' To Pet The Dog"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wash_dishes.wav-09c9654b09a88c9f5ebc8dad93f029d6.sample"
+
+[deps]
+
+source_file="res://assets/sounds_effects/wash_dishes.wav"
+dest_files=[ "res://.import/wash_dishes.wav-09c9654b09a88c9f5ebc8dad93f029d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

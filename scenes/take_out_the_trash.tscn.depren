@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/kitchen/background.PNG" type="Texture" id=1]
+[ext_resource path="res://assets/kitchen/floor.PNG" type="Texture" id=2]
+[ext_resource path="res://assets/boy/boy_ske.json" type="GDDragonBonesResource" id=3]
+[ext_resource path="res://assets/garbabe_bag/garbabe_bag.PNG" type="Texture" id=4]
+[ext_resource path="res://scripts/take_out_the_trash.gd" type="Script" id=5]
+[ext_resource path="res://assets/boy/boy_tex.png" type="Texture" id=6]
+
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 110.933
+height = 441.951
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1500, 50 )
+
+[node name="take_out_the_trash" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 721.511, 451.742 )
+texture = ExtResource( 1 )
+
+[node name="floor" type="Sprite" parent="."]
+position = Vector2( 352.452, 832.79 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="floor2" type="Sprite" parent="."]
+position = Vector2( 992.261, 832.79 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="floor3" type="Sprite" parent="."]
+position = Vector2( 1632.3, 832.79 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 100.007, 488.115 )
+
+[node name="boy" type="GDDragonBones" parent="player"]
+position = Vector2( 0, 176.003 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+resource = ExtResource( 3 )
+playback/play = true
+playback/curr_animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2( 28.6055, 14.8325 )
+shape = SubResource( 1 )
+
+[node name="garbabe_bag" type="Sprite" parent="."]
+position = Vector2( 338.106, -224.532 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 26.5916, 813.123 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1049.24, 71.2618 )
+shape = SubResource( 2 )
