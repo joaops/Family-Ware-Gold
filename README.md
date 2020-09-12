@@ -1,12 +1,9 @@
 # Instalação
 
-Para executar esse projeto, você vai precisar do [Godot-Dragonbones v3.2.51.stable](https://www.godotdragonbones.com/godot-dragonbones-3-2) ou mais recente.
+Para executar esse projeto, você vai precisar do [Godot-Dragonbones v3.2.52.stable](https://www.godotdragonbones.com/godot-dragonbones-3-2) ou mais recente.
 
 # Compilação
 Você vai precisar instalar o Export Templates antes de compilar o projeto. Qualquer dúvida veja esse vídeo: [Export a Godot Project (Dragonbones)](https://www.youtube.com/watch?v=3c4YF3dKBxY)
-
-# Executáveis
-Os executáveis para Windows, Mac e Linux estão dentro da pasta `/dist`
 
 # Áudios
 [wash-the-dishes.wav](https://freesound.org/people/Mickael_Leroi/sounds/402166/)

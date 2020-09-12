@@ -34,12 +34,12 @@ func _physics_process(_delta):
 	motion.y = motion.y + gravity
 	if $player.is_on_floor():
 		if $player/armature.get_current_animation() != "run":
-			$player/armature.fade_in("run", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+			$player/armature.fade_in("run", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 		if Input.is_action_pressed("ui_up"):
 			motion.y = -jump_force
 	else:
 		if $player/armature.get_current_animation() != "jump":
-			$player/armature.fade_in("jump", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+			$player/armature.fade_in("jump", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	motion = $player.move_and_slide(motion, Vector2.UP)
 
 

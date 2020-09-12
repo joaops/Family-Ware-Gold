@@ -15,25 +15,25 @@ func _physics_process(_delta):
 	if acao == "idle right":
 		$armature.flipX = false
 		if $armature.get_current_animation() != "idle":
-				$armature.fade_in("idle", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$armature.fade_in("idle", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	if acao == "walk right":
 		move_local_x(1);
 		$armature.flipX = false
 		if $armature.get_current_animation() != "walk":
-				$armature.fade_in("walk", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$armature.fade_in("walk", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	if acao == "idle left":
 		$armature.flipX = true
 		if $armature.get_current_animation() != "idle":
-				$armature.fade_in("idle", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$armature.fade_in("idle", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	if acao == "walk left":
 		move_local_x(-1);
 		$armature.flipX = true
 		if $armature.get_current_animation() != "walk":
-				$armature.fade_in("walk", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$armature.fade_in("walk", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	if acao == "pet":
 		move_local_x(0);
 		if $armature.get_current_animation() != "pet":
-				$armature.fade_in("pet", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$armature.fade_in("pet", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 
 
 func _on_Timer_timeout():

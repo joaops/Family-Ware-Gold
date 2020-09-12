@@ -34,11 +34,11 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("ui_run"):
 			speed = 400
 			if $player/armature.get_current_animation() != "run_trash_can":
-				$player/armature.fade_in("run_trash_can", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$player/armature.fade_in("run_trash_can", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 		else:
 			speed = 150
 			if $player/armature.get_current_animation() != "walk_trash_can":
-				$player/armature.fade_in("walk_trash_can", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$player/armature.fade_in("walk_trash_can", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	if Input.is_action_pressed("ui_left"):
 		$player/armature/Area2D.position.x = -380.696
 		direction.x -= 1
@@ -46,14 +46,14 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("ui_run"):
 			speed = 400
 			if $player/armature.get_current_animation() != "run_trash_can":
-				$player/armature.fade_in("run_trash_can", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$player/armature.fade_in("run_trash_can", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 		else:
 			speed = 150
 			if $player/armature.get_current_animation() != "walk_trash_can":
-				$player/armature.fade_in("walk_trash_can", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				$player/armature.fade_in("walk_trash_can", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	if direction.x == 0:
 		if $player/armature.get_current_animation() != "idle_trash_can":
-			$player/armature.fade_in("idle_trash_can", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+			$player/armature.fade_in("idle_trash_can", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	direction.x *= speed
 	direction = $player.move_and_slide(direction, Vector2.UP)
 

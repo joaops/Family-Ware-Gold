@@ -21,11 +21,11 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("ui_run"):
 			speed = 400
 			if get_node(armature).get_current_animation() != "run":
-				get_node(armature).fade_in("run", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				get_node(armature).fade_in("run", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 		else:
 			speed = 150
 			if get_node(armature).get_current_animation() != "walk":
-				get_node(armature).fade_in("walk", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				get_node(armature).fade_in("walk", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
@@ -33,19 +33,19 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("ui_run"):
 			speed = 400
 			if get_node(armature).get_current_animation() != "run":
-				get_node(armature).fade_in("run", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				get_node(armature).fade_in("run", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 		else:
 			speed = 150
 			if get_node(armature).get_current_animation() != "walk":
-				get_node(armature).fade_in("walk", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				get_node(armature).fade_in("walk", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 	
 	if direction.x == 0:
 		if Input.is_action_pressed("ui_f") and $LabelPet.visible:
 			if get_node(armature).get_current_animation() != "pet":
-				get_node(armature).fade_in("pet", 0.1, -1, 0, "", GDDragonBones.FadeOut_All)
+				get_node(armature).fade_in("pet", 0.1, -1, 0, "", GDArmatureDisplay.FadeOut_All)
 		else:
 			if get_node(armature).get_current_animation() != "idle":
-				get_node(armature).fade_in("idle", 0.1, -1, 1, "", GDDragonBones.FadeOut_All)
+				get_node(armature).fade_in("idle", 0.1, -1, 1, "", GDArmatureDisplay.FadeOut_All)
 
 	if $Label.visible:
 		if Input.is_action_just_pressed("ui_accept"):
